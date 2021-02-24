@@ -9,20 +9,20 @@ int main(){
     for(i=0; i<n; i++){
         for(int k=0; k<i; k++)
             cout<<" ";
-        for(j=1; j<=i+1; j++){
+        for(j=0; j<n-i; j++){
             cout<<"*";
         }
         cout<<"\n";
     }
 }
 /*
-PS C:\Users\acer\Desktop\daa\CEC\Pattern> g++ .\q3.cpp
-PS C:\Users\acer\Desktop\daa\CEC\Pattern> ./a.exe     
+PS C:\Users\acer\CEC-Practice_problems\pattern> g++ q7.cpp
+PS C:\Users\acer\CEC-Practice_problems\pattern> ./a.exe
 5
-    *
-   **
-  ***
- ****
 *****
+ ****
+  ***
+   **
+    *
 
 */
