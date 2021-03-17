@@ -3,11 +3,12 @@
 using namespace std;
 
 pair<bool, int> findMajority(int *arr, int n){
-    sort(arr, arr+n); 
+    sort(arr, arr+n);
     int half = n/2;
     for(int i=0; i<half-1; i++){
         if(arr[i]==arr[i+half])
-            return make_pair(true, arr[i]);    }
+            return make_pair(true, arr[i]);
+    }
     return make_pair(false,-1);
 }
 int main(){

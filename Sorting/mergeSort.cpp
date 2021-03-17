@@ -1,9 +1,9 @@
- #include<iostream>
+#include<iostream>
 using namespace std;
 
-void display(int *array, int size) {
+void display(int *arr, int size) {
    for(int i = 0; i<size; i++)
-      cout << array[i] << " ";
+      cout << arr[i] << " ";
    cout << endl;
 }
 
@@ -19,15 +19,12 @@ void merge(int *arr, int l, int m, int r){
     
     i=0;
     int j=0,k=l;
-    while (i < nl && j < nr)
-    {
-        if (larr[i] <= rarr[j])
-        {
+    while (i < nl && j < nr){
+        if (larr[i] <= rarr[j]){
             arr[k] = larr[i];
             i++;
         }
-        else
-        {
+        else{
             arr[k] = rarr[j];
             j++;
         }
@@ -47,18 +44,14 @@ void merge(int *arr, int l, int m, int r){
 void mergeSort(int *arr, int l, int r) {
    int m;
    if(l < r) {
-      int m = l+(r-l)/2;
-      cout<<"m= "<<m<<endl;
-      // Sort first and second arrs
-      mergeSort(arr, l, m);
-      mergeSort(arr, m+1, r);
-      merge(arr, l, m, r);
-      
+        int m = l+(r-l)/2;
+        mergeSort(arr, l, m);                      //log(n) time
+        mergeSort(arr, m+1, r);                     
+        merge(arr, l, m, r);                        // (n) time .. total = nlogn
    }
 }
 
 int main(){
-
     int l=0,n;
     cin>>n;
     int arr[n];
@@ -68,5 +61,4 @@ int main(){
     mergeSort(arr, 0, n-1);
     display(arr, n);
     return 0;
-
 }
